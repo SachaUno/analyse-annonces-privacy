@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Politique de confidentialité – Analyse d'annonces pour négociants auto</title>
+<style>
+  body { font: 16px/1.55 "Segoe UI", system-ui, -apple-system, Arial, sans-serif; color: #1a1d23; max-width: 760px; margin: 2rem auto; padding: 0 1.25rem; }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.15rem; margin-top: 2rem; border-bottom: 1px solid #c9ced6; padding-bottom: .25rem; }
+  .meta { color: #4c5360; margin-top: 0; }
+  hr { border: 0; border-top: 2px solid #1f3f66; margin: 2.5rem 0; }
+  table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+  th, td { border: 1px solid #c9ced6; padding: .4rem .6rem; text-align: left; vertical-align: top; }
+  th { background: #f1f3f6; }
+</style>
+</head>
+<body>
+
+<h1>Politique de confidentialité</h1>
+<p class="meta">Extension Chrome « Analyse d'annonces pour négociants auto » · version 1.0 · dernière mise à jour : 28 octobre 2026 · <a href="#english">English version below</a></p>
+
+<h2>1. Qui est responsable</h2>
+<p>Éditeur de l'extension et responsable du traitement : Sacha Martin.
+Contact pour toute question ou demande sur vos données : martinsacha996@gmail.com.</p>
+<p>Cette extension n'est ni éditée, ni approuvée, ni sponsorisée par AUTO1 Group ni par Leboncoin. Ces noms appartiennent à leurs propriétaires et ne sont cités que pour décrire les services avec lesquels l'extension fonctionne.</p>
+
+<h2>2. Ce que fait l'extension</h2>
+<p>Une seule fonction : aider un négociant automobile professionnel à repérer les annonces rentables parmi celles que la plateforme Auto1 lui affiche. Selon la configuration du serveur d'analyse, l'extension lit, dans l'onglet Auto1 du négociant, la liste des véhicules et, à la demande du serveur, la fiche de quelques annonces ; ou bien elle se limite à lire, à la demande du serveur, la page d'une annonce à la fois pour en obtenir le prix. Elle transmet ces informations au serveur d'analyse configuré par l'utilisateur, qui calcule un score, une marge potentielle et une enchère conseillée, puis renvoie le résultat à l'extension pour affichage.</p>
+
+<h2>3. Données traitées</h2>
+<table>
+<tr><th>Donnée</th><th>Origine</th><th>Pourquoi</th><th>Où elle va</th></tr>
+<tr><td>Annonces de la liste Auto1. La réponse complète de la plateforme est transmise ; elle contient notamment marque, modèle, année, kilométrage, prix, carburant, boîte, équipements, adresse et photos de l'annonce, date de fin d'enchère.</td><td>Réponses de la plateforme Auto1 à la requête de liste affichée dans l'onglet de l'utilisateur.</td><td>Évaluer chaque annonce.</td><td>Serveur d'analyse configuré par l'utilisateur.</td></tr>
+<tr><td>Fiche d'une annonce : dommages et réparations signalés, essai routier, historique, notes libres du vendeur.</td><td>Lues par l'onglet Auto1 de l'utilisateur, à la demande du serveur, pour les seules annonces qui laissent une marge.</td><td>Évaluer l'état réel du véhicule.</td><td>Serveur d'analyse.</td></tr>
+<tr><td>Identifiant technique du compte marchand Auto1, présent dans l'adresse des requêtes de liste et de fiche.</td><td>Adresse des requêtes Auto1.</td><td>Construire l'adresse des fiches à lire.</td><td>Serveur d'analyse.</td></tr>
+<tr><td>Adresse du serveur et jeton d'accès.</td><td>Saisis par l'utilisateur dans les réglages.</td><td>Joindre le serveur et prouver qu'on y est autorisé.</td><td>Conservés dans le stockage local de l'extension ; le jeton est envoyé au serveur dans l'en-tête <code>X-Token</code>.</td></tr>
+<tr><td>Résultats d'analyse, réglages (fréquence d'actualisation), état de connexion.</td><td>Reçus du serveur ou choisis par l'utilisateur.</td><td>Afficher la liste et mémoriser les choix.</td><td>Stockage local de l'extension uniquement.</td></tr>
+</table>
+<p><strong>Ce que l'extension ne collecte pas :</strong> aucun mot de passe, aucun cookie, aucune donnée de formulaire, aucune donnée sur d'autres sites que www.auto1.com, aucun historique de navigation, aucune identité de l'utilisateur. Elle ne lit que les réponses de la plateforme Auto1 à la requête de liste et aux requêtes de fiche. Les réponses brutes ne sont pas conservées par le serveur : seules les caractéristiques utiles à l'analyse le sont.</p>
+
+<h2>4. Destinataires et transferts</h2>
+<ul>
+<li><strong>Serveur d'analyse</strong> : exploité par l'éditeur ou par le prestataire de l'utilisateur. C'est le seul destinataire des données de l'extension.</li>
+<li><strong>Service de tunnel</strong> : lorsque le serveur est joint par internet, les échanges, chiffrés en HTTPS, transitent par un service de tunnel (actuellement ngrok) qui peut techniquement les traiter pour les acheminer. Il n'a pas d'autre usage de ces données.</li>
+<li><strong>Leboncoin</strong> : pour estimer la valeur de revente, le serveur recherche sur Leboncoin des annonces comparables (marque, modèle, année, kilométrage, carburant). Aucune donnée personnelle de l'utilisateur n'est envoyée.</li>
+</ul>
+<p>Les données ne sont ni vendues, ni louées, ni utilisées pour de la publicité, ni transférées à des courtiers en données, ni utilisées pour évaluer une solvabilité ou accorder un crédit. Elles ne sont lues par un humain que pour assurer le support à la demande de l'utilisateur, pour la sécurité du service ou pour respecter la loi.</p>
+
+<h2>5. Sécurité</h2>
+<p>Les échanges avec un serveur distant passent obligatoirement par HTTPS ; l'extension refuse une adresse distante en clair. L'accès au serveur exige un jeton. Un site web ne peut pas alimenter le serveur : celui-ci n'accepte que les messages de l'extension. Le serveur ne demande à l'extension de lire que des fiches d'annonces de l'origine Auto1 ; l'extension refuse toute autre adresse.</p>
+
+<h2>6. Conservation</h2>
+<p>Dans l'extension : jusqu'à ce que l'utilisateur vide la liste ou désinstalle l'extension. Sur le serveur : les analyses sont conservées tant qu'elles servent la finalité décrite ci-dessus et supprimées à la demande de l'utilisateur.</p>
+
+<h2>7. Vos droits</h2>
+<p>Vous pouvez demander l'accès à vos données, leur rectification ou leur effacement en écrivant à l'adresse de contact ci-dessus. Vous pouvez aussi saisir l'autorité de protection des données de votre pays (en France, la CNIL).</p>
+
+<h2>8. Utilisation limitée</h2>
+<p>L'utilisation par cette extension des informations reçues de la plateforme Auto1 respecte la politique relative aux données utilisateur du Chrome Web Store, y compris les exigences d'utilisation limitée. Ces informations servent uniquement à fournir la fonction décrite à la section 2.</p>
+
+<h2>9. Modifications</h2>
+<p>Toute modification importante de cette politique sera publiée sur cette page, avec une nouvelle date de mise à jour, avant d'entrer en vigueur.</p>
+
+<hr>
+
+<div id="english" lang="en">
+<h1>Privacy policy</h1>
+<p class="meta">Chrome extension “Analyse d'annonces pour négociants auto” (car-dealer listing analysis) · version 1.0 · last updated: 28 October 2026</p>
+
+<h2>1. Who is responsible</h2>
+<p>Publisher and data controller: Sacha Martin. Contact for any question or request about your data: martinsacha996@gmail.com.</p>
+<p>This extension is not published, endorsed or sponsored by AUTO1 Group or Leboncoin. These names belong to their owners and are used only to describe the services the extension works with.</p>
+
+<h2>2. What the extension does</h2>
+<p>One function: helping a professional car dealer spot profitable listings among those the Auto1 platform shows them. Depending on how the analysis server is set up, the extension reads, in the dealer's own Auto1 tab, the list of vehicles and, when the server asks, the detail page of a few listings; or it only reads, when the server asks, one listing's page at a time to get its price. It sends them to the analysis server the user has configured, which computes a score, a potential margin and a suggested maximum bid, and returns the result for display.</p>
+
+<h2>3. Data handled</h2>
+<table>
+<tr><th>Data</th><th>Source</th><th>Why</th><th>Where it goes</th></tr>
+<tr><td>Listings from the Auto1 list. The platform's complete response is transmitted; it contains in particular make, model, year, mileage, price, fuel, gearbox, equipment, listing address and photos, auction end time.</td><td>The Auto1 platform's responses to the list request shown in the user's tab.</td><td>To assess each listing.</td><td>The analysis server configured by the user.</td></tr>
+<tr><td>A listing's detail page: reported damage and repair items, road test, history, free-text seller notes.</td><td>Read by the user's Auto1 tab, at the server's request, only for listings that leave a margin.</td><td>To assess the real condition of the vehicle.</td><td>The analysis server.</td></tr>
+<tr><td>Technical identifier of the Auto1 merchant account, present in the address of list and detail requests.</td><td>Address of Auto1 requests.</td><td>To build the address of the detail pages to read.</td><td>The analysis server.</td></tr>
+<tr><td>Server address and access token.</td><td>Entered by the user in the settings.</td><td>To reach the server and prove authorisation.</td><td>Kept in the extension's local storage; the token is sent to the server in the <code>X-Token</code> header.</td></tr>
+<tr><td>Analysis results, settings (refresh interval), connection status.</td><td>Received from the server or chosen by the user.</td><td>To display the list and remember choices.</td><td>The extension's local storage only.</td></tr>
+</table>
+<p><strong>What the extension does not collect:</strong> no passwords, no cookies, no form data, no data from sites other than www.auto1.com, no browsing history, no user identity. It reads only the Auto1 platform's responses to the list request and the detail requests. The server does not keep the raw responses: it keeps only the characteristics needed for the analysis.</p>
+
+<h2>4. Recipients and transfers</h2>
+<ul>
+<li><strong>Analysis server</strong>: operated by the publisher or by the user's service provider. It is the only recipient of the extension's data.</li>
+<li><strong>Tunnel service</strong>: when the server is reached over the internet, the HTTPS traffic goes through a tunnel service (currently ngrok) that can technically process it to deliver it. It has no other use for this data.</li>
+<li><strong>Leboncoin</strong>: to estimate resale value, the server searches Leboncoin for comparable listings (make, model, year, mileage, fuel). No personal data about the user is sent.</li>
+</ul>
+<p>Data is not sold, rented, used for advertising, transferred to data brokers, or used to determine creditworthiness or for lending. A human reads it only to provide support at the user's request, for security, or to comply with the law.</p>
+
+<h2>5. Security</h2>
+<p>Exchanges with a remote server must use HTTPS; the extension rejects a remote address in clear text. Access to the server requires a token. A web page cannot feed the server: it accepts only the extension's messages. The server can only ask the extension to read Auto1 listing detail pages; the extension refuses any other address.</p>
+
+<h2>6. Retention</h2>
+<p>In the extension: until the user clears the list or uninstalls the extension. On the server: analyses are kept as long as they serve the purpose described above and are deleted at the user's request.</p>
+
+<h2>7. Your rights</h2>
+<p>You can request access to, correction of or deletion of your data by writing to the contact address above. You can also contact the data protection authority of your country.</p>
+
+<h2>8. Limited Use</h2>
+<p>The use by this extension of information received from the Auto1 platform complies with the Chrome Web Store User Data Policy, including the Limited Use requirements. This information is used only to provide the function described in section 2.</p>
+
+<h2>9. Changes</h2>
+<p>Any material change to this policy will be published on this page, with a new update date, before it takes effect.</p>
+</div>
+
+</body>
+</html>
